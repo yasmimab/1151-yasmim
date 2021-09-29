@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        body {
+         background-color: rgb(135, 102, 167);
+        } main {
+            background-color: rgb(52, 190, 245);
+            margin: auto;
+            padding: 15px;
+            border-radius: 5px;
+            width: 200px
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Maior valor</h1>
+        <form action="salvar.php" method="get" onsubmit="return verificar()">
+            <label for="v1">Valor 1</label>
+            <input type="number" name="v1" id="v1" min="0" max="100" value="0">
+            <br><label for="v2">Valor 2</label>
+            <input type="number" name="v2" id="v2" min="0" max="100" value="0">
+            <br><input type="submit" value="Verificar">
+        </form>
+        <p id="res"></p>
+    </main>
+
+    <script>
+        function verificar() {
+            let num1= Number(document.getElementById("v1").value)
+            let num2 = Number(document.getElementById("v2").value)
+            let res = document.getElementById("res")
+
+            if (num1 > num2) {
+                res.innerHTML= `${num1} é maior que ${num2}`
+            } else if (num1 == num2) {
+                res.innerHTML= "Esses números são iguais"
+            } else {
+                res.innerHTML= `${num2} é maior que ${num1}`
+            }
+
+            return false
+        }
+    </script>
+</body>
+</html>
